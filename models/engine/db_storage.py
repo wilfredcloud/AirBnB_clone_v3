@@ -32,7 +32,7 @@ class DBStorage:
         HBNB_MYSQL_HOST = getenv('HBNB_MYSQL_HOST')
         HBNB_MYSQL_DB = getenv('HBNB_MYSQL_DB')
         HBNB_ENV = getenv('HBNB_ENV')
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
+        self.__engine = create_engine('mysql+mysqlconnector://{}:{}@{}/{}'.
                                       format(HBNB_MYSQL_USER,
                                              HBNB_MYSQL_PWD,
                                              HBNB_MYSQL_HOST,
@@ -78,12 +78,15 @@ class DBStorage:
     def get(self, cls, id):
         """Retrieve one object"""
         if cls is not None and id is not None:
-            key = "{}.{}".format(cls.__name__, id)
-            return self.__objects.get(key, None)
+            d_obj = self.all(cls)
+            search_key = "{}.{}".format(cls.__name__, id)
+            for key, value in d_obj.items():
+                if key == search_key:
+                    return value
         return None
 
     def count(self, cls=None):
-        """Count the number of objects in storae"""
+        """Count the number of objects in storage"""
         data = self.all(cls)
         if cls in classes.values():
             data = self.all(cls)

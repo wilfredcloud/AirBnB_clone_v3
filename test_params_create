@@ -1,6 +1,4 @@
-create State name="California"
-create State name="Arizona"
-all State
+create City state_id="3590afe8-ae38-4c51-9455-c3e7cf03b06f" name="San_Jose"
 
-create Place city_id="0001" user_id="0001" name="My_little_house" number_rooms=4 number_bathrooms=2 max_guest=10 price_by_night=300 latitude=37.773972 longitude=-122.431297
-all Place
+
+
