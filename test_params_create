@@ -1,4 +1,4 @@
-create City state_id="3590afe8-ae38-4c51-9455-c3e7cf03b06f" name="San_Jose"
 
+echo 'create Place city_id="1f230e97-7cd4-4871-a792-5163f46e81b5" user_id="20dbfcc1-c39c-4054-9a2a-08a03ce257fa" name="Lovely_place" number_rooms=3 number_bathrooms=1 max_guest=6 price_by_night=120 latitude=37.773972 longitude=-122.431297' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db
 
-
+echo 'create Review place_id="24aa455d-fb3a-447d-9324-0e689bddf7c1" user_id="86b6cfb0-0155-4d71-af3a-182ccd0bb431" text="Amazing_place,_huge_kitchen"' | HBNB_MYSQL_USER=hbnb_dev HBNB_MYSQL_PWD=hbnb_dev_pwd HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_dev_db HBNB_TYPE_STORAGE=db
